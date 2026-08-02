@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiestas Mágicas | Eventos e Animaciones Infantiles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --verde-principal: #22c55e;
+      --verde-oscuro: #15803d;
+      --verde-claro: #dcfce7;
+      --amarillo-fiesta: #facc15;
+      --coral-acento: #ff6b6b;
+      --texto-oscuro: #1e293b;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+      color: var(--texto-oscuro);
+      background-color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    /* HEADER & NAV */
+    header {
+      background-color: var(--blanco);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Estilo del Logo */
+    .logo-img {
+      height: 50px; /* Ajusta según el alto de tu logo */
+      width: auto;
+      object-fit: contain;
+    }
+
+    .btn-contact {
+      background-color: var(--verde-principal);
+      color: var(--blanco);
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      background-color: var(--verde-oscuro);
+    }
+
+    /* HERO SECTION CON IMAGEN */
+    .hero {
+      background: linear-gradient(135deg, var(--verde-claro) 0%, #f0fdf4 100%);
+      padding: 4rem 1.5rem;
+    }
+
+    .hero-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 span {
+      color: var(--verde-principal);
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #475569;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+      max-height: 400px;
+    }
+
+    /* SERVICIOS CON IMÁGENES */
+    .services {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      color: var(--texto-oscuro);
+    }
+
+    .grid-services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      border: 2px solid #f1f5f9;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--verde-principal);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-body h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* GALERÍA DE FOTOS */
+    .gallery {
+      background-color: #ffffff;
+      padding: 4rem 1.5rem;
+    }
+
+    .gallery-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .grid-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.03);
+    }
+
+    /* BOTÓN FLOTANTE WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--texto-oscuro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+
+    /* ADAPTACIÓN A CELULARES */
+    @media (max-width: 768px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-text h1 { font-size: 1.8rem; }
+      .hero-text p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación con Logo -->
+  <header>
+    <div class="nav-container">
+      <a href="#">
+        <!-- Reemplaza 'imagenes/logo.png' por la ruta de tu logo -->
+        <img src="IMAGENES/logo.jpeg" alt="Logo Fiestas Infantiles" class="logo-img">
+      </a>
+      <a href="https://wa.me/5574074899?text=Hola,%20quisiera%20informes%20para%20un%20evento" target="_blank" class="btn-contact">Cotizar Evento</a>
+    </div>
+  </header>
+
+  <!-- Hero principal -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>¡La fiesta de sus sueños <span>sin complicaciones!</span></h1>
+        <p>Organización integral, animaciones divertidas, decoración temática y los personajes favoritos de tus pequeños.</p>
+        <a href="https://wa.me/5574074899?text=Hola,%20quisiera%20cotizar%20un%20evento" target="_blank" class="btn-contact" style="padding: 1rem 2rem; font-size: 1.1rem;">
+          💬 Cotizame por WhatsApp
+        </a>
+      </div>
+      <div class="hero-image">
+        <!-- Foto principal de la portada -->
+        <img src="IMAGENES/animadores.jpg" alt="Fiesta infantil divertida">
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios con imágenes -->
+  <section class="services">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="grid-services">
+      
+      <div class="card">
+        <img src="imagenes/fiestaspider.jpeg" alt="Animación y Shows" class="card-img">
+        <div class="card-body">
+          <h3>Animación y Shows</h3>
+          <p>Aventura llevada por expertos.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="imagenes/spidermanNegro.jpg" alt="Personajes Infantiles" class="card-img">
+        <div class="card-body">
+          <h3>Personajes</h3>
+          <p>La visita especial del personaje favorito de tu hijo/a para fotos y momentos mágicos.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="imagenes/decoracion.jpeg" alt="Decoración con Globos" class="card-img">
+        <div class="card-body">
+          <h3>Decoraciones</h3>
+          <p>Arcos de globos, mesas principales temáticas y ambientación personalizada.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="imagenes/celebracion.jpg" alt="Organización de eventos" class="card-img">
+        <div class="card-body">
+          <h3>Organización Total</h3>
+          <p>Nos encargamos de la logística para que tú solo te dediques a disfrutar la fiesta.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="imagenes/100mexicanos.jpeg" alt="juegos infantiles y adultos" class="card-img">
+        <div class="card-body">
+          <h3>Animación y Shows</h3>
+          <p>Juegos interactivos, dinámicas familiares y diversión coordinada por profesionales.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="imagenes/pintacaritas.jpg" alt="Pintacaritas" class="card-img">
+        <div class="card-body">
+          <h3>Pintacaritas</h3>
+          <p>Pintamos a tus pequeños para que sean nuestros superheroes.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Galería de Eventos Reales -->
+  <section class="gallery">
+    <div class="gallery-container">
+      <h2 class="section-title">Momentos Magicos e Inolvidables</h2>
+      <div class="grid-gallery">
+        <div class="gallery-item"><img src="IMAGENES/animadores.jpg" alt="Evento 1"></div>
+        <div class="gallery-item"><img src="imagenes/fiestaspider.jpeg" alt="Evento 2"></div>
+        <div class="gallery-item"><img src="imagenes/simsom.jpg" alt="Evento 3"></div>
+        <div class="gallery-item"><img src="imagenes/superheroes.jpg" alt="Evento 4"></div>
+        <div class="gallery-item"><img src="imagenes/mario.jpeg" alt="Evento 5"></div>
+        <div class="gallery-item"><img src="imagenes/mesaDeSnacks.jpeg" alt="Evento 6"></div>
+        <div class="gallery-item"><img src="imagenes/toy_story.jpg" alt="Evento 7"></div>
+        <div class="gallery-item"><img src="IMAGENES/batman.png" alt="Evento 8"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <a href="https://wa.me/5574074899?text=Hola,%20me%20gustaria%20mas%20informacion" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+    💬
+  </a>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2026 Carpas Lokas - Todos los derechos reservados.</p>
+    <p><small>Síguenos en Instagram y Facebook</small></p>
+  </footer>
+
+</body>
+</html>
